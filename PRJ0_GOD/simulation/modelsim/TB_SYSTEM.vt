@@ -1,0 +1,201 @@
+/*######################################################################
+//#	G0B1T: HDL EXAMPLES. 2018.
+//######################################################################
+//# Copyright (C) 2018. F.E.Segura-Quijano (FES) fsegura@uniandes.edu.co
+//# 
+//# This program is free software: you can redistribute it and/or modify
+//# it under the terms of the GNU General Public License as published by
+//# the Free Software Foundation, version 3 of the License.
+//#
+//# This program is distributed in the hope that it will be useful,
+//# but WITHOUT ANY WARRANTY; without even the implied warranty of
+//# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//# GNU General Public License for more details.
+//#
+//# You should have received a copy of the GNU General Public License
+//# along with this program.  If not, see <http://www.gnu.org/licenses/>
+//####################################################################*/
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+// constants                                           
+// ============================================
+// Parameter ( may differ for physical synthesis)
+// ============================================
+	// general purpose registers
+	reg eachvec;
+	parameter TCK = 20; // clock period in ns
+	parameter CLK_FREQ = 1000000000 / TCK; // Frequenzy in HZ
+	parameter DATAWIDTH_BUS = 8;
+	integer ii=0;
+	// test vector input registers
+// ============================================
+// INTERNAL WIRE AND REG DECLARATIONS
+// ============================================
+	// wires (OUTPUTS)
+	//wire TB_SYSTEM_display_OutBUS;
+	//wire TB_SYSTEM_max7219DIN_Out;
+	//wire TB_SYSTEM_max7219NCS_Out;
+	//wire TB_SYSTEM_max7219CLK_Out;
+	
+	wire [5:0] TB_SYSTEM_estado;
+	wire [7:0] TB_SYSTEM_point_6;
+	wire [7:0] TB_SYSTEM_point_7;
+	wire [7:0] TB_SYSTEM_back_7;
+	
+	wire TB_SYSTEM_COMP_anidado;
+	wire TB_SYSTEM_COMP_perdi;
+	wire TB_SYSTEM_COMP_Nivel;
+	wire [3:0] TB_SYSTEM_COUNT_LEVEL;
+	wire [7:0] TB_SYSTEM_LEVEL;
+
+	// reg (INPUTS)
+	reg TB_SYSTEM_CLOCK_50;
+	reg TB_SYSTEM_RESET_InHigh;
+	reg TB_SYSTEM_startButton_InLow; 
+	reg TB_SYSTEM_upButton_InLow;
+	reg TB_SYSTEM_downButton_InLow;
+	reg TB_SYSTEM_leftButton_InLow;
+	reg TB_SYSTEM_rightButton_InLow;	
+	
+	reg[7:0] random1;
+	// assign statements (if any)                          
+	BB_SYSTEM BB_SYSTEM_u0 (
+	// port map - connection between master ports and signals/registers   
+	
+		.BB_SYSTEM_state(TB_SYSTEM_estado),
+		.BB_SYSTEM_point_6(TB_SYSTEM_point_6),
+		.BB_SYSTEM_point_7(TB_SYSTEM_point_7),
+		.BB_SYSTEM_back_7(TB_SYSTEM_back_7),
+			
+		.BB_SYSTEM_COMP_perdi(TB_SYSTEM_COMP_perdi),
+		.BB_SYSTEM_COMP_anidado(TB_SYSTEM_COMP_anidado),
+		.BB_SYSTEM_COMP_nivel(TB_SYSTEM_COMP_Nivel),
+		
+		.BB_SYSTEM_COUNT_LEVEL(TB_SYSTEM_COUNT_LEVEL),
+		.BB_SYSTEM_LEVEL(TB_SYSTEM_LEVEL),
+		
+		.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+		.BB_SYSTEM_RESET_InHigh(TB_SYSTEM_RESET_InHigh),
+		.BB_SYSTEM_startButton_InLow(TB_SYSTEM_startButton_InLow),
+		.BB_SYSTEM_upButton_InLow(TB_SYSTEM_upButton_InLow),
+		.BB_SYSTEM_downButton_InLow(TB_SYSTEM_downButton_InLow),
+		.BB_SYSTEM_leftButton_InLow(TB_SYSTEM_leftButton_InLow),
+		.BB_SYSTEM_rightButton_InLow(TB_SYSTEM_rightButton_InLow)
+	);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+	TB_SYSTEM_CLOCK_50 <= 0;
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~ TB_SYSTEM_CLOCK_50;
+initial begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin     
+	random1 <= $random;
+	#0 			TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b1;
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b1; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b1; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	
+	#1000000 	TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+	#1000000		TB_SYSTEM_RESET_InHigh <= 1'b0; TB_SYSTEM_startButton_InLow <= 1'b0; TB_SYSTEM_upButton_InLow <= 1'b0; TB_SYSTEM_downButton_InLow <= 1'b0; TB_SYSTEM_leftButton_InLow <= 1'b0; TB_SYSTEM_rightButton_InLow <= 1'b0;
+
+	//#(TCK*1000000) $finish;	
+@eachvec;
+$finish;                                              
+// --> end                                             
+end                                                    
+endmodule
+

@@ -1,0 +1,1576 @@
+Analysis & Synthesis report for BB_SYSTEM
+Tue May 10 20:59:23 2022
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg
+  9. State Machine - |BB_SYSTEM|SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM
+ 16. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u0
+ 17. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u1
+ 18. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u2
+ 19. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u3
+ 20. Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u4
+ 21. Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7
+ 22. Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6
+ 23. Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5
+ 24. Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4
+ 25. Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3
+ 26. Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2
+ 27. Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1
+ 28. Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0
+ 29. Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7
+ 30. Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6
+ 31. Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5
+ 32. Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4
+ 33. Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3
+ 34. Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2
+ 35. Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1
+ 36. Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0
+ 37. Parameter Settings for User Entity Instance: SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0
+ 38. Parameter Settings for User Entity Instance: CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0
+ 39. Parameter Settings for User Entity Instance: CC_BOTTOMSIDECOMPARATOR:CC_BOTTOMSIDECOMPARATOR_u0
+ 40. Parameter Settings for User Entity Instance: matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0
+ 41. Parameter Settings for User Entity Instance: SC_upCOUNTER:SC_upCOUNTER_u0
+ 42. Port Connectivity Checks: "matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0"
+ 43. Port Connectivity Checks: "matrix_ctrl:matrix_ctrl_unit_0"
+ 44. Port Connectivity Checks: "CC_MUX:CC_MUX_r7"
+ 45. Port Connectivity Checks: "CC_MUX:CC_MUX_r6"
+ 46. Port Connectivity Checks: "CC_MUX:CC_MUX_r5"
+ 47. Port Connectivity Checks: "CC_MUX:CC_MUX_r4"
+ 48. Port Connectivity Checks: "CC_MUX:CC_MUX_r3"
+ 49. Port Connectivity Checks: "CC_MUX:CC_MUX_r2"
+ 50. Port Connectivity Checks: "CC_MUX:CC_MUX_r1"
+ 51. Port Connectivity Checks: "CC_MUX:CC_MUX_r0"
+ 52. Port Connectivity Checks: "SC_STATEMACHINEGAME:SC_STATEMACHINEGAME_u0"
+ 53. Port Connectivity Checks: "SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0"
+ 54. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0"
+ 55. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1"
+ 56. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2"
+ 57. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3"
+ 58. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4"
+ 59. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5"
+ 60. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6"
+ 61. Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7"
+ 62. Port Connectivity Checks: "SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0"
+ 63. Post-Synthesis Netlist Statistics for Top Partition
+ 64. Elapsed Time Per Partition
+ 65. Analysis & Synthesis Messages
+ 66. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue May 10 20:59:23 2022       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; BB_SYSTEM                                   ;
+; Top-level Entity Name              ; BB_SYSTEM                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 835                                         ;
+;     Total combinational functions  ; 833                                         ;
+;     Dedicated logic registers      ; 309                                         ;
+; Total registers                    ; 309                                         ;
+; Total pins                         ; 76                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; BB_SYSTEM          ; BB_SYSTEM          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; 4                  ;                    ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
+; rtl/SC_STATEMACHINEBACKG.v       ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEBACKG.v    ;         ;
+; rtl/SC_RegBACKGTYPE.v            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegBACKGTYPE.v         ;         ;
+; rtl/SC_STATEMACHINEPOINT.v       ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v    ;         ;
+; rtl/SC_RegPOINTTYPE.v            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v         ;         ;
+; rtl/CC_BOTTOMSIDECOMPARATOR.v    ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BOTTOMSIDECOMPARATOR.v ;         ;
+; rtl/SC_upCOUNTER.v               ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upCOUNTER.v            ;         ;
+; rtl/CC_SEVENSEG1.v               ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SEVENSEG1.v            ;         ;
+; rtl/CC_BIN2BCD1.v                ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v             ;         ;
+; rtl/SC_upSPEEDCOUNTER.v          ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upSPEEDCOUNTER.v       ;         ;
+; rtl/CC_SPEEDCOMPARATOR.v         ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SPEEDCOMPARATOR.v      ;         ;
+; rtl/shift_reg_start_done.v       ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/shift_reg_start_done.v    ;         ;
+; rtl/max7219_ctrl.v               ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v            ;         ;
+; rtl/SC_DEBOUNCE1.v               ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_DEBOUNCE1.v            ;         ;
+; BB_SYSTEM.v                      ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v                   ;         ;
+; rtl/SC_STATEMACHINEGAME.v        ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v     ;         ;
+; rtl/CC_REGISTERCOMPARATOR.v      ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v   ;         ;
+; rtl/CC_MUX.v                     ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_MUX.v                  ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 835                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 833                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 478                      ;
+;     -- 3 input functions                    ; 180                      ;
+;     -- <=2 input functions                  ; 175                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 728                      ;
+;     -- arithmetic mode                      ; 105                      ;
+;                                             ;                          ;
+; Total registers                             ; 309                      ;
+;     -- Dedicated logic registers            ; 309                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 76                       ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
+; Maximum fan-out                             ; 309                      ;
+; Total fan-out                               ; 4098                     ;
+; Average fan-out                             ; 3.17                     ;
++---------------------------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                     ;
++----------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name           ; Library Name ;
++----------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |BB_SYSTEM                                               ; 833 (28)            ; 309 (0)                   ; 0           ; 0            ; 0       ; 0         ; 76   ; 0            ; |BB_SYSTEM                                                                                 ; BB_SYSTEM             ; work         ;
+;    |CC_BIN2BCD1:CC_BIN2BCD1_u0|                          ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_BIN2BCD1:CC_BIN2BCD1_u0                                                      ; CC_BIN2BCD1           ; work         ;
+;    |CC_MUX:CC_MUX_r1|                                    ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MUX:CC_MUX_r1                                                                ; CC_MUX                ; work         ;
+;    |CC_MUX:CC_MUX_r3|                                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MUX:CC_MUX_r3                                                                ; CC_MUX                ; work         ;
+;    |CC_MUX:CC_MUX_r4|                                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MUX:CC_MUX_r4                                                                ; CC_MUX                ; work         ;
+;    |CC_MUX:CC_MUX_r5|                                    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MUX:CC_MUX_r5                                                                ; CC_MUX                ; work         ;
+;    |CC_MUX:CC_MUX_r7|                                    ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MUX:CC_MUX_r7                                                                ; CC_MUX                ; work         ;
+;    |CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|       ; 51 (51)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1                                   ; CC_REGISTERCOMPARATOR ; work         ;
+;    |CC_SEVENSEG1:CC_SEVENSEG1_u0|                        ; 41 (41)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_SEVENSEG1:CC_SEVENSEG1_u0                                                    ; CC_SEVENSEG1          ; work         ;
+;    |CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0|            ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0                                        ; CC_SPEEDCOMPARATOR    ; work         ;
+;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u0|                        ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u0                                                    ; SC_DEBOUNCE1          ; work         ;
+;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u1|                        ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u1                                                    ; SC_DEBOUNCE1          ; work         ;
+;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u2|                        ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u2                                                    ; SC_DEBOUNCE1          ; work         ;
+;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u3|                        ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u3                                                    ; SC_DEBOUNCE1          ; work         ;
+;    |SC_DEBOUNCE1:SC_DEBOUNCE1_u4|                        ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_DEBOUNCE1:SC_DEBOUNCE1_u4                                                    ; SC_DEBOUNCE1          ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|                  ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0                                              ; SC_RegBACKGTYPE       ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|                  ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1                                              ; SC_RegBACKGTYPE       ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|                  ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2                                              ; SC_RegBACKGTYPE       ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|                  ; 14 (14)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3                                              ; SC_RegBACKGTYPE       ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4|                  ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4                                              ; SC_RegBACKGTYPE       ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5|                  ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5                                              ; SC_RegBACKGTYPE       ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|                  ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6                                              ; SC_RegBACKGTYPE       ; work         ;
+;    |SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|                  ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7                                              ; SC_RegBACKGTYPE       ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|                  ; 28 (28)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0                                              ; SC_RegPOINTTYPE       ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|                  ; 30 (30)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1                                              ; SC_RegPOINTTYPE       ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|                  ; 28 (28)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2                                              ; SC_RegPOINTTYPE       ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|                  ; 28 (28)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3                                              ; SC_RegPOINTTYPE       ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|                  ; 28 (28)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4                                              ; SC_RegPOINTTYPE       ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|                  ; 28 (28)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5                                              ; SC_RegPOINTTYPE       ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|                  ; 26 (26)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6                                              ; SC_RegPOINTTYPE       ; work         ;
+;    |SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|                  ; 28 (28)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7                                              ; SC_RegPOINTTYPE       ; work         ;
+;    |SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|        ; 15 (15)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0                                    ; SC_STATEMACHINEBACKG  ; work         ;
+;    |SC_STATEMACHINEGAME:SC_STATEMACHINEGAME_u0|          ; 27 (27)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEGAME:SC_STATEMACHINEGAME_u0                                      ; SC_STATEMACHINEGAME   ; work         ;
+;    |SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|        ; 28 (28)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0                                    ; SC_STATEMACHINEPOINT  ; work         ;
+;    |SC_upCOUNTER:SC_upCOUNTER_u0|                        ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_upCOUNTER:SC_upCOUNTER_u0                                                    ; SC_upCOUNTER          ; work         ;
+;    |SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0|              ; 23 (23)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0                                          ; SC_upSPEEDCOUNTER     ; work         ;
+;    |matrix_ctrl:matrix_ctrl_unit_0|                      ; 125 (35)            ; 52 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0                                                  ; matrix_ctrl           ; work         ;
+;       |shift_reg_start_done:shift_reg_start_done_unit_0| ; 90 (90)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ; shift_reg_start_done  ; work         ;
++----------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++----------------------------------------+----------------------------------------+----------------------------+------------------------------------+------------------------+------------------------------------+------------------------+-------------------------------------+-------------------------+---------------------------------+---------------------+---------------------------------------+---------------------------+------------------------------------+------------------------+---------------------+-----------------+----------------+
+; Name                                   ; state_reg.DISPLAY_TEST_OFF_WAIT2FINISH ; state_reg.DISPLAY_TEST_OFF ; state_reg.DISPLAY_TEST_WAIT2FINISH ; state_reg.DISPLAY_TEST ; state_reg.DIS_SHUTDOWN_WAIT2FINISH ; state_reg.DIS_SHUTDOWN ; state_reg.SET_SCAN_MODE_WAIT2FINISH ; state_reg.SET_SCAN_MODE ; state_reg.INTENSITY_WAIT2FINISH ; state_reg.INTENSITY ; state_reg.SET_DECODE_MODE_WAIT2FINISH ; state_reg.SET_DECODE_MODE ; state_reg.UPDATE_FRAME_WAIT2FINISH ; state_reg.UPDATE_FRAME ; state_reg.MAIN_LOOP ; state_reg.START ; state_reg.STOP ;
++----------------------------------------+----------------------------------------+----------------------------+------------------------------------+------------------------+------------------------------------+------------------------+-------------------------------------+-------------------------+---------------------------------+---------------------+---------------------------------------+---------------------------+------------------------------------+------------------------+---------------------+-----------------+----------------+
+; state_reg.START                        ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 0               ; 0              ;
+; state_reg.MAIN_LOOP                    ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 1                   ; 1               ; 0              ;
+; state_reg.UPDATE_FRAME                 ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 1                      ; 0                   ; 1               ; 0              ;
+; state_reg.UPDATE_FRAME_WAIT2FINISH     ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 1                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.SET_DECODE_MODE              ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 1                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.SET_DECODE_MODE_WAIT2FINISH  ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 1                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.INTENSITY                    ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 1                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.INTENSITY_WAIT2FINISH        ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 1                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.SET_SCAN_MODE                ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 1                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.SET_SCAN_MODE_WAIT2FINISH    ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 1                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.DIS_SHUTDOWN                 ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 1                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.DIS_SHUTDOWN_WAIT2FINISH     ; 0                                      ; 0                          ; 0                                  ; 0                      ; 1                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.DISPLAY_TEST                 ; 0                                      ; 0                          ; 0                                  ; 1                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.DISPLAY_TEST_WAIT2FINISH     ; 0                                      ; 0                          ; 1                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.DISPLAY_TEST_OFF             ; 0                                      ; 1                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.DISPLAY_TEST_OFF_WAIT2FINISH ; 1                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 0              ;
+; state_reg.STOP                         ; 0                                      ; 0                          ; 0                                  ; 0                      ; 0                                  ; 0                      ; 0                                   ; 0                       ; 0                               ; 0                   ; 0                                     ; 0                         ; 0                                  ; 0                      ; 0                   ; 1               ; 1              ;
++----------------------------------------+----------------------------------------+----------------------------+------------------------------------+------------------------+------------------------------------+------------------------+-------------------------------------+-------------------------+---------------------------------+---------------------+---------------------------------------+---------------------------+------------------------------------+------------------------+---------------------+-----------------+----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BB_SYSTEM|SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register                                                                                                                                                                                                                                                                                                                      ;
++------------------------------+-----------------------------+-----------------------------+-----------------------------+------------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+
+; Name                         ; STATE_Register.STATE_SET_NL ; STATE_Register.STATE_INIT_2 ; STATE_Register.STATE_INIT_1 ; STATE_Register.STATE_CHECK_2 ; STATE_Register.STATE_SET_NN ; STATE_Register.STATE_CHECK_1 ; STATE_Register.STATE_COUNT_0 ; STATE_Register.STATE_SHIFT_0 ; STATE_Register.STATE_INIT_0 ; STATE_Register.STATE_CHECK_0 ; STATE_Register.STATE_START_0 ; STATE_Register.STATE_RESET_0 ;
++------------------------------+-----------------------------+-----------------------------+-----------------------------+------------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+
+; STATE_Register.STATE_RESET_0 ; 0                           ; 0                           ; 0                           ; 0                            ; 0                           ; 0                            ; 0                            ; 0                            ; 0                           ; 0                            ; 0                            ; 0                            ;
+; STATE_Register.STATE_START_0 ; 0                           ; 0                           ; 0                           ; 0                            ; 0                           ; 0                            ; 0                            ; 0                            ; 0                           ; 0                            ; 1                            ; 1                            ;
+; STATE_Register.STATE_CHECK_0 ; 0                           ; 0                           ; 0                           ; 0                            ; 0                           ; 0                            ; 0                            ; 0                            ; 0                           ; 1                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_INIT_0  ; 0                           ; 0                           ; 0                           ; 0                            ; 0                           ; 0                            ; 0                            ; 0                            ; 1                           ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_SHIFT_0 ; 0                           ; 0                           ; 0                           ; 0                            ; 0                           ; 0                            ; 0                            ; 1                            ; 0                           ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_COUNT_0 ; 0                           ; 0                           ; 0                           ; 0                            ; 0                           ; 0                            ; 1                            ; 0                            ; 0                           ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_CHECK_1 ; 0                           ; 0                           ; 0                           ; 0                            ; 0                           ; 1                            ; 0                            ; 0                            ; 0                           ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_SET_NN  ; 0                           ; 0                           ; 0                           ; 0                            ; 1                           ; 0                            ; 0                            ; 0                            ; 0                           ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_CHECK_2 ; 0                           ; 0                           ; 0                           ; 1                            ; 0                           ; 0                            ; 0                            ; 0                            ; 0                           ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_INIT_1  ; 0                           ; 0                           ; 1                           ; 0                            ; 0                           ; 0                            ; 0                            ; 0                            ; 0                           ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_INIT_2  ; 0                           ; 1                           ; 0                           ; 0                            ; 0                           ; 0                            ; 0                            ; 0                            ; 0                           ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_SET_NL  ; 1                           ; 0                           ; 0                           ; 0                            ; 0                           ; 0                            ; 0                            ; 0                            ; 0                           ; 0                            ; 0                            ; 1                            ;
++------------------------------+-----------------------------+-----------------------------+-----------------------------+------------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+-----------------------------+------------------------------+------------------------------+------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                                                            ;
++------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------------+
+; Latch Name                                                                         ; Latch Enable Signal                                                              ; Free of Timing Hazards ;
++------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------------+
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinL_OutLow    ; GND                                                                              ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_NN_Outlow[0]   ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_NN_Outlow[7] ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[0] ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|always0                            ; yes                    ;
+; matrix_ctrl:matrix_ctrl_unit_0|ctrl_sr[1]                                          ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP                               ; yes                    ;
+; matrix_ctrl:matrix_ctrl_unit_0|ctrl_sr[0]                                          ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.MAIN_LOOP                               ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[1] ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|always0                            ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[2] ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|always0                            ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[3] ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|always0                            ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[4] ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|always0                            ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[5] ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|always0                            ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[6] ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|always0                            ; yes                    ;
+; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[7] ; CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|always0                            ; yes                    ;
+; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Signal[3]                       ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|Mux4                                ; yes                    ;
+; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Signal[2]                       ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|Mux4                                ; yes                    ;
+; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Signal[1]                       ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|Mux4                                ; yes                    ;
+; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Signal[0]                       ; SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|Mux4                                ; yes                    ;
+; Number of user-specified and inferred latches = 16                                 ;                                                                                  ;                        ;
++------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                          ;
++-------------------------------------------------------------------+-------------------------------------------------------------------------+
+; Register name                                                     ; Reason for Removal                                                      ;
++-------------------------------------------------------------------+-------------------------------------------------------------------------+
+; SC_STATEMACHINEGAME:SC_STATEMACHINEGAME_u0|STATE_Register[5]      ; Stuck at GND due to stuck port data_in                                  ;
+; matrix_ctrl:matrix_ctrl_unit_0|Trig_Register1                     ; Merged with matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~0             ;
+; SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[1..7]    ; Merged with SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0|RegBACKGTYPE_Register[0] ;
+; matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~3                   ; Merged with CC_SEVENSEG1:CC_SEVENSEG1_u0|count[0]                       ;
+; matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~2                   ; Merged with CC_SEVENSEG1:CC_SEVENSEG1_u0|count[1]                       ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg~21                       ; Lost fanout                                                             ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg~22                       ; Lost fanout                                                             ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg~23                       ; Lost fanout                                                             ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg~25                       ; Lost fanout                                                             ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg~26                       ; Lost fanout                                                             ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg~27                       ; Lost fanout                                                             ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg~28                       ; Lost fanout                                                             ;
+; SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register~4     ; Lost fanout                                                             ;
+; SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register~5     ; Lost fanout                                                             ;
+; SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register~6     ; Lost fanout                                                             ;
+; SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register~7     ; Lost fanout                                                             ;
+; SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register~8     ; Lost fanout                                                             ;
+; SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register~9     ; Lost fanout                                                             ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST             ; Stuck at GND due to stuck port data_in                                  ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg.STOP                     ; Stuck at GND due to stuck port data_in                                  ;
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST_WAIT2FINISH ; Stuck at GND due to stuck port data_in                                  ;
+; matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~1                   ; Merged with CC_SEVENSEG1:CC_SEVENSEG1_u0|count[2]                       ;
+; CC_SEVENSEG1:CC_SEVENSEG1_u0|count[3]                             ; Merged with matrix_ctrl:matrix_ctrl_unit_0|clk_driver_reg~0             ;
+; Total Number of Removed Registers = 29                            ;                                                                         ;
++-------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                           ;
++-------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; Register name                                         ; Reason for Removal        ; Registers Removed due to This Register                            ;
++-------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST ; Stuck at GND              ; matrix_ctrl:matrix_ctrl_unit_0|state_reg.DISPLAY_TEST_WAIT2FINISH ;
+;                                                       ; due to stuck port data_in ;                                                                   ;
++-------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 309   ;
+; Number of registers using Synchronous Clear  ; 72    ;
+; Number of registers using Synchronous Load   ; 23    ;
+; Number of registers using Asynchronous Clear ; 239   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 199   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6|RegBACKGTYPE_Register[6]                                ;
+; 3:1                ; 27 bits   ; 54 LEs        ; 27 LEs               ; 27 LEs                 ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[5]                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7|RegBACKGTYPE_Register[4]                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |BB_SYSTEM|SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register[2]                             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|cnt_reg[7] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[13]  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[1]   ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2|RegBACKGTYPE_Register[4]                                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[5]                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1|RegBACKGTYPE_Register[2]                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3|RegBACKGTYPE_Register[3]                                ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; Yes        ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0|r_reg[6]   ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1|RegPOINTTYPE_Register[1]                                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3|RegPOINTTYPE_Register[7]                                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5|RegPOINTTYPE_Register[6]                                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[7]                                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6|RegPOINTTYPE_Register[7]                                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0|RegPOINTTYPE_Register[0]                                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2|RegPOINTTYPE_Register[1]                                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |BB_SYSTEM|SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4|RegPOINTTYPE_Register[0]                                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|CC_MUX:CC_MUX_r1|CC_MUX_z_Out[0]                                                           ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|data_max[2]                                                                                ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |BB_SYSTEM|SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0|STATE_Register                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |BB_SYSTEM|CC_SEVENSEG1:CC_SEVENSEG1_u0|Mux0                                                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |BB_SYSTEM|matrix_ctrl:matrix_ctrl_unit_0|state_reg                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM ;
++---------------------------+----------+------------------------------------+
+; Parameter Name            ; Value    ; Type                               ;
++---------------------------+----------+------------------------------------+
+; DATAWIDTH_BUS             ; 8        ; Signed Integer                     ;
+; PRESCALER_DATAWIDTH       ; 23       ; Signed Integer                     ;
+; DISPLAY_DATAWIDTH         ; 12       ; Signed Integer                     ;
+; DATA_FIXED_INITREGPOINT_7 ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_INITREGPOINT_6 ; 00010000 ; Unsigned Binary                    ;
+; DATA_FIXED_INITREGPOINT_5 ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_INITREGPOINT_4 ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_INITREGPOINT_3 ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_INITREGPOINT_2 ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_INITREGPOINT_1 ; 00000000 ; Unsigned Binary                    ;
+; DATA_FIXED_INITREGPOINT_0 ; 00000000 ; Unsigned Binary                    ;
+; N1_7                      ; 11110111 ; Unsigned Binary                    ;
+; N1_6                      ; 00000000 ; Unsigned Binary                    ;
+; N1_5                      ; 10010011 ; Unsigned Binary                    ;
+; N1_4                      ; 00000000 ; Unsigned Binary                    ;
+; N1_3                      ; 11100111 ; Unsigned Binary                    ;
+; N1_2                      ; 00000000 ; Unsigned Binary                    ;
+; N1_1                      ; 11110001 ; Unsigned Binary                    ;
+; N1_0                      ; 00000000 ; Unsigned Binary                    ;
+; N2_7                      ; 11101111 ; Unsigned Binary                    ;
+; N2_6                      ; 00000000 ; Unsigned Binary                    ;
+; N2_5                      ; 11100011 ; Unsigned Binary                    ;
+; N2_4                      ; 00000000 ; Unsigned Binary                    ;
+; N2_3                      ; 10011001 ; Unsigned Binary                    ;
+; N2_2                      ; 00000000 ; Unsigned Binary                    ;
+; N2_1                      ; 10001010 ; Unsigned Binary                    ;
+; N2_0                      ; 00000000 ; Unsigned Binary                    ;
+; N3_7                      ; 11110111 ; Unsigned Binary                    ;
+; N3_6                      ; 00000000 ; Unsigned Binary                    ;
+; N3_5                      ; 11100111 ; Unsigned Binary                    ;
+; N3_4                      ; 00000000 ; Unsigned Binary                    ;
+; N3_3                      ; 11100111 ; Unsigned Binary                    ;
+; N3_2                      ; 00000000 ; Unsigned Binary                    ;
+; N3_1                      ; 11100111 ; Unsigned Binary                    ;
+; N3_0                      ; 00000000 ; Unsigned Binary                    ;
+; N4_7                      ; 11101111 ; Unsigned Binary                    ;
+; N4_6                      ; 00000000 ; Unsigned Binary                    ;
+; N4_5                      ; 11100111 ; Unsigned Binary                    ;
+; N4_4                      ; 00000000 ; Unsigned Binary                    ;
+; N4_3                      ; 11100111 ; Unsigned Binary                    ;
+; N4_2                      ; 00000000 ; Unsigned Binary                    ;
+; N4_1                      ; 11100111 ; Unsigned Binary                    ;
+; N4_0                      ; 00000000 ; Unsigned Binary                    ;
+; CN1_7                     ; 00000000 ; Unsigned Binary                    ;
+; CN1_6                     ; 00011000 ; Unsigned Binary                    ;
+; CN1_5                     ; 00111000 ; Unsigned Binary                    ;
+; CN1_4                     ; 00011000 ; Unsigned Binary                    ;
+; CN1_3                     ; 00011000 ; Unsigned Binary                    ;
+; CN1_2                     ; 00011000 ; Unsigned Binary                    ;
+; CN1_1                     ; 00111100 ; Unsigned Binary                    ;
+; CN1_0                     ; 00000000 ; Unsigned Binary                    ;
+; CN2_7                     ; 00000000 ; Unsigned Binary                    ;
+; CN2_6                     ; 00111100 ; Unsigned Binary                    ;
+; CN2_5                     ; 00100100 ; Unsigned Binary                    ;
+; CN2_4                     ; 00000100 ; Unsigned Binary                    ;
+; CN2_3                     ; 00001000 ; Unsigned Binary                    ;
+; CN2_2                     ; 00010000 ; Unsigned Binary                    ;
+; CN2_1                     ; 00111100 ; Unsigned Binary                    ;
+; CN2_0                     ; 00000000 ; Unsigned Binary                    ;
+; CN3_7                     ; 00000000 ; Unsigned Binary                    ;
+; CN3_6                     ; 00111100 ; Unsigned Binary                    ;
+; CN3_5                     ; 00100100 ; Unsigned Binary                    ;
+; CN3_4                     ; 00001100 ; Unsigned Binary                    ;
+; CN3_3                     ; 00000100 ; Unsigned Binary                    ;
+; CN3_2                     ; 00100100 ; Unsigned Binary                    ;
+; CN3_1                     ; 00111100 ; Unsigned Binary                    ;
+; CN3_0                     ; 00000000 ; Unsigned Binary                    ;
+; CN4_7                     ; 00000000 ; Unsigned Binary                    ;
+; CN4_6                     ; 00001000 ; Unsigned Binary                    ;
+; CN4_5                     ; 00011000 ; Unsigned Binary                    ;
+; CN4_4                     ; 00101000 ; Unsigned Binary                    ;
+; CN4_3                     ; 01111110 ; Unsigned Binary                    ;
+; CN4_2                     ; 00001000 ; Unsigned Binary                    ;
+; CN4_1                     ; 00001000 ; Unsigned Binary                    ;
+; CN4_0                     ; 00000000 ; Unsigned Binary                    ;
+; P_7                       ; 01111110 ; Unsigned Binary                    ;
+; P_6                       ; 10011001 ; Unsigned Binary                    ;
+; P_5                       ; 10011001 ; Unsigned Binary                    ;
+; P_4                       ; 11111111 ; Unsigned Binary                    ;
+; P_3                       ; 11000011 ; Unsigned Binary                    ;
+; P_2                       ; 11011011 ; Unsigned Binary                    ;
+; P_1                       ; 11011011 ; Unsigned Binary                    ;
+; P_0                       ; 11111111 ; Unsigned Binary                    ;
+; G_7                       ; 11111111 ; Unsigned Binary                    ;
+; G_6                       ; 10011001 ; Unsigned Binary                    ;
+; G_5                       ; 10011001 ; Unsigned Binary                    ;
+; G_4                       ; 11111111 ; Unsigned Binary                    ;
+; G_3                       ; 11011011 ; Unsigned Binary                    ;
+; G_2                       ; 11011011 ; Unsigned Binary                    ;
+; G_1                       ; 11000011 ; Unsigned Binary                    ;
+; G_0                       ; 11111111 ; Unsigned Binary                    ;
+; N                         ; 0        ; Signed Integer                     ;
++---------------------------+----------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u0 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 11    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u1 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 11    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u2 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 11    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u3 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 11    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_DEBOUNCE1:SC_DEBOUNCE1_u4 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; N              ; 11    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegPOINTTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGPOINT ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegPOINTTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGPOINT ; 00010000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u5 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegPOINTTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGPOINT ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u4 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegPOINTTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGPOINT ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u3 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegPOINTTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGPOINT ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u2 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegPOINTTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGPOINT ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u1 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegPOINTTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGPOINT ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegPOINTTYPE:SC_RegPOINTTYPE_u0 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegPOINTTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGPOINT ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0 ;
++-------------------------+----------+--------------------------------------------+
+; Parameter Name          ; Value    ; Type                                       ;
++-------------------------+----------+--------------------------------------------+
+; RegBACKGTYPE_DATAWIDTH  ; 8        ; Signed Integer                             ;
+; DATA_FIXED_INITREGBACKG ; 00000000 ; Unsigned Binary                            ;
++-------------------------+----------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0 ;
++--------------------------+-------+--------------------------------------------------+
+; Parameter Name           ; Value ; Type                                             ;
++--------------------------+-------+--------------------------------------------------+
+; upSPEEDCOUNTER_DATAWIDTH ; 23    ; Signed Integer                                   ;
++--------------------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0 ;
++---------------------------+-------+---------------------------------------------------+
+; Parameter Name            ; Value ; Type                                              ;
++---------------------------+-------+---------------------------------------------------+
+; SPEEDCOMPARATOR_DATAWIDTH ; 23    ; Signed Integer                                    ;
++---------------------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CC_BOTTOMSIDECOMPARATOR:CC_BOTTOMSIDECOMPARATOR_u0 ;
++--------------------------------+-------+--------------------------------------------------------+
+; Parameter Name                 ; Value ; Type                                                   ;
++--------------------------------+-------+--------------------------------------------------------+
+; BOTTOMSIDECOMPARATOR_DATAWIDTH ; 8     ; Signed Integer                                         ;
++--------------------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0 ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                                                      ;
++----------------+-------+-----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_upCOUNTER:SC_upCOUNTER_u0 ;
++---------------------+-------+---------------------------------------------+
+; Parameter Name      ; Value ; Type                                        ;
++---------------------+-------+---------------------------------------------+
+; upCOUNTER_DATAWIDTH ; 8     ; Signed Integer                              ;
++---------------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0" ;
++-----------+-------+----------+------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                      ;
++-----------+-------+----------+------------------------------------------------------------------------------+
+; d[15..12] ; Input ; Info     ; Stuck at GND                                                                 ;
++-----------+-------+----------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "matrix_ctrl:matrix_ctrl_unit_0" ;
++--------------+-------+----------+--------------------------+
+; Port         ; Type  ; Severity ; Details                  ;
++--------------+-------+----------+--------------------------+
+; intensity[3] ; Input ; Info     ; Stuck at VCC             ;
+; intensity[2] ; Input ; Info     ; Stuck at GND             ;
+; intensity[1] ; Input ; Info     ; Stuck at VCC             ;
+; intensity[0] ; Input ; Info     ; Stuck at GND             ;
++--------------+-------+----------+--------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "CC_MUX:CC_MUX_r7"                ;
++---------------------------+-------+----------+--------------+
+; Port                      ; Type  ; Severity ; Details      ;
++---------------------------+-------+----------+--------------+
+; CC_MUX_data_InBUS_0[7..4] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_0[2..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_0[3]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_1[7..5] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_1[3..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_1[4]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_2[7..4] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_2[2..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_2[3]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_3[7..5] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_3[3..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_3[4]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[6..1] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[7]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[0]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9       ; Input ; Info     ; Stuck at VCC ;
++---------------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "CC_MUX:CC_MUX_r6"                ;
++---------------------------+-------+----------+--------------+
+; Port                      ; Type  ; Severity ; Details      ;
++---------------------------+-------+----------+--------------+
+; CC_MUX_data_InBUS_0       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_1       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_2       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_3       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_4[7..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[5..2] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_5[7..6] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[1..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[5..2] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_6[7..6] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[1..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[7..4] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[3]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[6..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[2..1] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[7]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[0]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[6..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9[2..1] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9[7]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[0]    ; Input ; Info     ; Stuck at VCC ;
++---------------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "CC_MUX:CC_MUX_r5"                ;
++---------------------------+-------+----------+--------------+
+; Port                      ; Type  ; Severity ; Details      ;
++---------------------------+-------+----------+--------------+
+; CC_MUX_data_InBUS_0[1..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_0[6..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_0[3..2] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_0[7]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_0[4]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_1[7..5] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_1[1..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_1[4..2] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_2[7..5] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_2[2..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_2[4..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_3[7..5] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_3[2..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_3[4..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[5..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_4[7..6] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[7..6] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[4..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[1..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[5]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_5[2]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_6[7..6] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[4..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[1..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[5]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_6[2]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_7[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_7[7..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[6..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[2..1] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[7]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[0]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[6..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9[2..1] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9[7]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[0]    ; Input ; Info     ; Stuck at VCC ;
++---------------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "CC_MUX:CC_MUX_r4"                ;
++---------------------------+-------+----------+--------------+
+; Port                      ; Type  ; Severity ; Details      ;
++---------------------------+-------+----------+--------------+
+; CC_MUX_data_InBUS_0       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_1       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_2       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_3       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_4[7..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[7..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[1..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[2]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_6[3..2] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_6[7..4] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[1..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[7..6] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[5]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_7[4]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[3]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8       ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9       ; Input ; Info     ; Stuck at VCC ;
++---------------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "CC_MUX:CC_MUX_r3"                ;
++---------------------------+-------+----------+--------------+
+; Port                      ; Type  ; Severity ; Details      ;
++---------------------------+-------+----------+--------------+
+; CC_MUX_data_InBUS_0[7..5] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_0[2..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_0[4..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_1[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_1[6..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_1[2..1] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_1[7]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_1[0]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_2[7..5] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_2[2..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_2[4..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_3[7..5] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_3[2..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_3[4..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_4[7..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[7..4] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[3]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_6[7..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[1..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[2]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_7[6..1] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_7[7]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[0]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[7..6] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[1..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[5..2] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9[7..6] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[1..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[5]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9[2]    ; Input ; Info     ; Stuck at GND ;
++---------------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "CC_MUX:CC_MUX_r2"                ;
++---------------------------+-------+----------+--------------+
+; Port                      ; Type  ; Severity ; Details      ;
++---------------------------+-------+----------+--------------+
+; CC_MUX_data_InBUS_0       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_1       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_2       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_3       ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_4[7..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[7..5] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[3..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5[4]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_6[7..6] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[4..3] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[1..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6[5]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_6[2]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_7[7..4] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[2..0] ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7[3]    ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[7..6] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[1..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_8[5]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8[2]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9[7..6] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[4..3] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[1..0] ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9[5]    ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_9[2]    ; Input ; Info     ; Stuck at GND ;
++---------------------------+-------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CC_MUX:CC_MUX_r1"                                                                                                                                                               ;
++---------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                      ; Type  ; Severity ; Details                                                                                                                                                     ;
++---------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CC_MUX_data_InBUS_0[7..4] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_0[3..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_0[0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_1[6..4] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_1[7]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_1[3]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_1[2]    ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_1[1]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_1[0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_2[7..5] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_2[2..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_2[4..3] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_3[7..5] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_3[2..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_3[4..3] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_4[5..2] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_4[7..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_4[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_5[5..2] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_5[7..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_5[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_6[5..2] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_6[7..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_6[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_7       ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "CC_MUX_data_InBUS_7[7..1]" will be connected to GND. ;
+; CC_MUX_data_InBUS_8[7..6] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_8[4..3] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_8[1..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_8[5]    ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_8[2]    ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
+; CC_MUX_data_InBUS_9[7..6] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_9[1..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                ;
+; CC_MUX_data_InBUS_9[5..2] ; Input ; Info     ; Stuck at GND                                                                                                                                                ;
++---------------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "CC_MUX:CC_MUX_r0"          ;
++---------------------+-------+----------+--------------+
+; Port                ; Type  ; Severity ; Details      ;
++---------------------+-------+----------+--------------+
+; CC_MUX_data_InBUS_0 ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_1 ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_2 ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_3 ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_4 ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_5 ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_6 ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_7 ; Input ; Info     ; Stuck at GND ;
+; CC_MUX_data_InBUS_8 ; Input ; Info     ; Stuck at VCC ;
+; CC_MUX_data_InBUS_9 ; Input ; Info     ; Stuck at VCC ;
++---------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_STATEMACHINEGAME:SC_STATEMACHINEGAME_u0"                                                                                                                                                                          ;
++------------------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                                     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++------------------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_STATEMACHINEGAME_WinF_InLow           ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; SC_STATEMACHINEGAME_RESET_FromGame_Point ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "SC_STATEMACHINEGAME_RESET_FromGame_Point[1..1]" have no fanouts                      ;
+; SC_STATEMACHINEGAME_SET_FrogGame         ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "SC_STATEMACHINEGAME_SET_FrogGame[1..1]" have no fanouts                              ;
+; SC_STATEMACHINEGAME_SET_FrogGame         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++------------------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0"                                                                                                                                                                  ;
++-------------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                                ; Type  ; Severity ; Details                                                                                                                                                                          ;
++-------------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_STATEMACHINEBACKG_WINF           ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; SC_STATEMACHINEBACKG_Change_BACKG   ; Input ; Warning  ; Input port expression (2 bits) is wider than the input port (1 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; SC_STATEMACHINEBACKG_RESET_FromGame ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                                     ;
+; SC_STATEMACHINEBACKG_Lose           ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                                     ;
++-------------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u0"                                                                                                                           ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type  ; Severity ; Details                                                                                                                                      ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_NN     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SC_RegBACKGTYPE_SET_NN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u1"                                                                                                                           ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type  ; Severity ; Details                                                                                                                                      ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_NN     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SC_RegBACKGTYPE_SET_NN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u2"                                                                                                                           ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type  ; Severity ; Details                                                                                                                                      ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_NN     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SC_RegBACKGTYPE_SET_NN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u3"                                                                                                                           ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type  ; Severity ; Details                                                                                                                                      ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_NN     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SC_RegBACKGTYPE_SET_NN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u4"                                                                                                                           ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type  ; Severity ; Details                                                                                                                                      ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_NN     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SC_RegBACKGTYPE_SET_NN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u5"                                                                                                                           ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type  ; Severity ; Details                                                                                                                                      ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_NN     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SC_RegBACKGTYPE_SET_NN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u6"                                                                                                                           ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type  ; Severity ; Details                                                                                                                                      ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_NN     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; SC_RegBACKGTYPE_SET_NN ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7"                                                                                                                                                                          ;
++-----------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                              ; Type  ; Severity ; Details                                                                                                                                                                          ;
++-----------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_RegBACKGTYPE_shiftselection_In ; Input ; Info     ; Explicitly unconnected                                                                                                                                                           ;
+; SC_RegBACKGTYPE_SET_NN            ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-----------------------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0"                                                                                                                                                         ;
++---------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                      ; Type   ; Severity ; Details                                                                                                                                                                          ;
++---------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SC_STATEMACHINEPOINT_WINF ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; STATE_Signal              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++---------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 76                          ;
+; cycloneiii_ff         ; 309                         ;
+;     CLR               ; 39                          ;
+;     CLR SLD           ; 1                           ;
+;     ENA CLR           ; 160                         ;
+;     ENA CLR SCLR      ; 17                          ;
+;     ENA CLR SLD       ; 22                          ;
+;     SCLR              ; 55                          ;
+;     plain             ; 15                          ;
+; cycloneiii_lcell_comb ; 837                         ;
+;     arith             ; 105                         ;
+;         2 data inputs ; 102                         ;
+;         3 data inputs ; 3                           ;
+;     normal            ; 732                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 62                          ;
+;         3 data inputs ; 177                         ;
+;         4 data inputs ; 478                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 3.99                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Tue May 10 20:59:08 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachinebackg.v
+    Info (12023): Found entity 1: SC_STATEMACHINEBACKG File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEBACKG.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regbackgtype.v
+    Info (12023): Found entity 1: SC_RegBACKGTYPE File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegBACKGTYPE.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachinepoint.v
+    Info (12023): Found entity 1: SC_STATEMACHINEPOINT File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_regpointtype.v
+    Info (12023): Found entity 1: SC_RegPOINTTYPE File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_bottomsidecomparator.v
+    Info (12023): Found entity 1: CC_BOTTOMSIDECOMPARATOR File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BOTTOMSIDECOMPARATOR.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_upcounter.v
+    Info (12023): Found entity 1: SC_upCOUNTER File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upCOUNTER.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_sevenseg1.v
+    Info (12023): Found entity 1: CC_SEVENSEG1 File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SEVENSEG1.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_bin2bcd1.v
+    Info (12023): Found entity 1: CC_BIN2BCD1 File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_upspeedcounter.v
+    Info (12023): Found entity 1: SC_upSPEEDCOUNTER File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upSPEEDCOUNTER.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_speedcomparator.v
+    Info (12023): Found entity 1: CC_SPEEDCOMPARATOR File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SPEEDCOMPARATOR.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/shift_reg_start_done.v
+    Info (12023): Found entity 1: shift_reg_start_done File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/shift_reg_start_done.v Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/max7219_ctrl.v
+    Info (12023): Found entity 1: matrix_ctrl File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_debounce1.v
+    Info (12023): Found entity 1: SC_DEBOUNCE1 File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_DEBOUNCE1.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
+    Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachinegame.v
+    Info (12023): Found entity 1: SC_STATEMACHINEGAME File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_registercomparator.v
+    Info (12023): Found entity 1: CC_REGISTERCOMPARATOR File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_counter.v
+    Info (12023): Found entity 1: SC_COUNTER File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_COUNTER.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_mux.v
+    Info (12023): Found entity 1: CC_MUX File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_MUX.v Line: 21
+Warning (10238): Verilog Module Declaration warning at CC_PERDICOMPARATOR.v(36): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "CC_PERDICOMPARATOR" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_PERDICOMPARATOR.v Line: 36
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_perdicomparator.v
+    Info (12023): Found entity 1: CC_PERDICOMPARATOR File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_PERDICOMPARATOR.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_anidecomparator.v
+    Info (12023): Found entity 1: CC_ANIDECOMPARATOR File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_ANIDECOMPARATOR.v Line: 21
+Warning (10238): Verilog Module Declaration warning at CC_GANECOMPARATOR.v(26): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "CC_GANECOMPARATOR" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_GANECOMPARATOR.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/cc_ganecomparator.v
+    Info (12023): Found entity 1: CC_GANECOMPARATOR File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_GANECOMPARATOR.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(568): created implicit net for "WIN_FROG" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 568
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(661): created implicit net for "CN4_" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 661
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(853): created implicit net for "BB_SYSTEM_ST_GAME_signal" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 853
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(854): created implicit net for "BB_SYSTEM_ST_BACK_signal" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 854
+Warning (10236): Verilog HDL Implicit Net warning at BB_SYSTEM.v(855): created implicit net for "BB_SYSTEM_ST_POINT_signal" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 855
+Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(853): object "BB_SYSTEM_ST_GAME_signal" assigned a value but never read File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 853
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(854): object "BB_SYSTEM_ST_BACK_signal" assigned a value but never read File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 854
+Warning (10036): Verilog HDL or VHDL warning at BB_SYSTEM.v(855): object "BB_SYSTEM_ST_POINT_signal" assigned a value but never read File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 855
+Warning (10858): Verilog HDL warning at BB_SYSTEM.v(273): object GAME_Signal used but never assigned File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 273
+Warning (10858): Verilog HDL warning at BB_SYSTEM.v(274): object BACK_Signal used but never assigned File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 274
+Warning (10230): Verilog HDL assignment warning at BB_SYSTEM.v(853): truncated value with size 4 to match size of target (1) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 853
+Warning (10230): Verilog HDL assignment warning at BB_SYSTEM.v(854): truncated value with size 4 to match size of target (1) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 854
+Warning (10230): Verilog HDL assignment warning at BB_SYSTEM.v(855): truncated value with size 4 to match size of target (1) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 855
+Warning (10034): Output port "BB_SYSTEM_point_1" at BB_SYSTEM.v(179) has no driver File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 179
+Warning (10034): Output port "BB_SYSTEM_back_1" at BB_SYSTEM.v(180) has no driver File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 180
+Info (12128): Elaborating entity "SC_DEBOUNCE1" for hierarchy "SC_DEBOUNCE1:SC_DEBOUNCE1_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 303
+Warning (10230): Verilog HDL assignment warning at SC_DEBOUNCE1.v(70): truncated value with size 32 to match size of target (11) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_DEBOUNCE1.v Line: 70
+Info (12128): Elaborating entity "SC_RegPOINTTYPE" for hierarchy "SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 347
+Info (12128): Elaborating entity "SC_RegPOINTTYPE" for hierarchy "SC_RegPOINTTYPE:SC_RegPOINTTYPE_u6" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 359
+Info (12128): Elaborating entity "SC_STATEMACHINEPOINT" for hierarchy "SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 451
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(95): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 95
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(96): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 96
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(97): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 97
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(98): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 98
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(99): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 99
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(100): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 100
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(101): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 101
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(102): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 102
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(103): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 103
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(104): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 104
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(105): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 105
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(106): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 106
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(107): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 107
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(109): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 109
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(110): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 110
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(111): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 111
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(112): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 112
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(113): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 113
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(114): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 114
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(116): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 116
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(118): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 118
+Warning (10240): Verilog HDL Always Construct warning at SC_STATEMACHINEPOINT.v(94): inferring latch(es) for variable "STATE_Signal", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(125): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 125
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(127): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 127
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEPOINT.v(129): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 129
+Info (10041): Inferred latch for "STATE_Signal[0]" at SC_STATEMACHINEPOINT.v(94) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+Info (10041): Inferred latch for "STATE_Signal[1]" at SC_STATEMACHINEPOINT.v(94) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+Info (10041): Inferred latch for "STATE_Signal[2]" at SC_STATEMACHINEPOINT.v(94) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+Info (10041): Inferred latch for "STATE_Signal[3]" at SC_STATEMACHINEPOINT.v(94) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+Info (12128): Elaborating entity "SC_RegBACKGTYPE" for hierarchy "SC_RegBACKGTYPE:SC_RegBACKGTYPE_u7" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 469
+Warning (10230): Verilog HDL assignment warning at SC_RegBACKGTYPE.v(73): truncated value with size 15 to match size of target (8) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegBACKGTYPE.v Line: 73
+Info (12128): Elaborating entity "SC_STATEMACHINEBACKG" for hierarchy "SC_STATEMACHINEBACKG:SC_STATEMACHINEBACKG_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 553
+Info (10264): Verilog HDL Case Statement information at SC_STATEMACHINEBACKG.v(138): all case item expressions in this case statement are onehot File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEBACKG.v Line: 138
+Info (12128): Elaborating entity "SC_STATEMACHINEGAME" for hierarchy "SC_STATEMACHINEGAME:SC_STATEMACHINEGAME_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 572
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(93): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 93
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(94): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 94
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(95): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 95
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(96): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 96
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(98): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 98
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(99): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 99
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(100): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 100
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(101): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 101
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(102): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 102
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(103): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 103
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(104): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 104
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(105): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 105
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(107): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 107
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(108): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 108
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(109): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 109
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(110): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 110
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(112): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 112
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(113): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 113
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(114): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 114
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(115): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 115
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(117): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 117
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(118): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 118
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(119): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 119
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(120): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 120
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(121): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 121
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(122): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 122
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(123): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 123
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(124): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 124
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(126): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 126
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(127): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 127
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(130): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 130
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(131): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 131
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(132): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 132
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(133): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 133
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(135): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 135
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(136): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 136
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(137): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 137
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(138): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 138
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(140): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 140
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(141): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 141
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(142): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 142
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(143): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 143
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(145): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 145
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(146): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 146
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(147): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 147
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(148): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 148
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(151): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 151
+Warning (10230): Verilog HDL assignment warning at SC_STATEMACHINEGAME.v(158): truncated value with size 32 to match size of target (6) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v Line: 158
+Info (12128): Elaborating entity "CC_REGISTERCOMPARATOR" for hierarchy "CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 598
+Warning (10240): Verilog HDL Always Construct warning at CC_REGISTERCOMPARATOR.v(87): inferring latch(es) for variable "CC_REGISTERCOMPARATOR_NN_Outlow", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 87
+Warning (10240): Verilog HDL Always Construct warning at CC_REGISTERCOMPARATOR.v(87): inferring latch(es) for variable "CC_REGISTERCOMPARATOR_WinF_OutLow", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 87
+Warning (10240): Verilog HDL Always Construct warning at CC_REGISTERCOMPARATOR.v(87): inferring latch(es) for variable "CC_REGISTERCOMPARATOR_WinL_OutLow", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 87
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinL_OutLow" at CC_REGISTERCOMPARATOR.v(112) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 112
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_NN_Outlow[0]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_NN_Outlow[1]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_NN_Outlow[2]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_NN_Outlow[3]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_NN_Outlow[4]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_NN_Outlow[5]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_NN_Outlow[6]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_NN_Outlow[7]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinF_OutLow[0]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinF_OutLow[1]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinF_OutLow[2]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinF_OutLow[3]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinF_OutLow[4]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinF_OutLow[5]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinF_OutLow[6]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (10041): Inferred latch for "CC_REGISTERCOMPARATOR_WinF_OutLow[7]" at CC_REGISTERCOMPARATOR.v(105) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Info (12128): Elaborating entity "CC_MUX" for hierarchy "CC_MUX:CC_MUX_r0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 648
+Info (12128): Elaborating entity "SC_upSPEEDCOUNTER" for hierarchy "SC_upSPEEDCOUNTER:SC_upSPEEDCOUNTER_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 770
+Info (12128): Elaborating entity "CC_SPEEDCOMPARATOR" for hierarchy "CC_SPEEDCOMPARATOR:CC_SPEEDCOMPARATOR_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 775
+Info (12128): Elaborating entity "CC_BOTTOMSIDECOMPARATOR" for hierarchy "CC_BOTTOMSIDECOMPARATOR:CC_BOTTOMSIDECOMPARATOR_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 783
+Info (12128): Elaborating entity "matrix_ctrl" for hierarchy "matrix_ctrl:matrix_ctrl_unit_0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 821
+Warning (10036): Verilog HDL or VHDL warning at max7219_ctrl.v(58): object "Trig_SignalNEG" assigned a value but never read File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 58
+Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(50): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 50
+Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(51): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 51
+Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(260): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 260
+Warning (10240): Verilog HDL Always Construct warning at max7219_ctrl.v(154): inferring latch(es) for variable "ctrl_sr", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 154
+Warning (10230): Verilog HDL assignment warning at max7219_ctrl.v(278): truncated value with size 32 to match size of target (3) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 278
+Info (10041): Inferred latch for "ctrl_sr[0]" at max7219_ctrl.v(154) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 154
+Info (10041): Inferred latch for "ctrl_sr[1]" at max7219_ctrl.v(154) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 154
+Info (12128): Elaborating entity "shift_reg_start_done" for hierarchy "matrix_ctrl:matrix_ctrl_unit_0|shift_reg_start_done:shift_reg_start_done_unit_0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v Line: 109
+Warning (10230): Verilog HDL assignment warning at shift_reg_start_done.v(69): truncated value with size 32 to match size of target (16) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/shift_reg_start_done.v Line: 69
+Info (12128): Elaborating entity "CC_BIN2BCD1" for hierarchy "CC_BIN2BCD1:CC_BIN2BCD1_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 873
+Warning (10230): Verilog HDL assignment warning at CC_BIN2BCD1.v(36): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v Line: 36
+Warning (10230): Verilog HDL assignment warning at CC_BIN2BCD1.v(42): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v Line: 42
+Warning (10230): Verilog HDL assignment warning at CC_BIN2BCD1.v(44): truncated value with size 32 to match size of target (4) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v Line: 44
+Info (12128): Elaborating entity "CC_SEVENSEG1" for hierarchy "CC_SEVENSEG1:CC_SEVENSEG1_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 892
+Warning (10230): Verilog HDL assignment warning at CC_SEVENSEG1.v(40): truncated value with size 32 to match size of target (15) File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SEVENSEG1.v Line: 40
+Info (12128): Elaborating entity "SC_upCOUNTER" for hierarchy "SC_upCOUNTER:SC_upCOUNTER_u0" File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 900
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_NN_Outlow[0] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|WideOr2 File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[0] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[0] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 86
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[1] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[1] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 86
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[2] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[2] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 86
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[3] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[3] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 86
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[4] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[4] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 86
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[5] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[5] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 86
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[6] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[6] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 86
+Warning (13012): Latch CC_REGISTERCOMPARATOR:CC_REGISTERCOMPARATOR_1|CC_REGISTERCOMPARATOR_WinF_OutLow[7] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v Line: 105
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_RegPOINTTYPE:SC_RegPOINTTYPE_u7|RegPOINTTYPE_Register[7] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v Line: 86
+Warning (13012): Latch SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Signal[3] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register[3] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 126
+Warning (13012): Latch SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Signal[2] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register[3] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 126
+Warning (13012): Latch SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Signal[1] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register[3] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 126
+Warning (13012): Latch SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Signal[0] has unsafe behavior File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 94
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SC_STATEMACHINEPOINT:SC_STATEMACHINEPOINT_u0|STATE_Register[2] File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v Line: 126
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "BB_SYSTEM_display_OutBUS[7]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 163
+    Warning (13410): Pin "BB_SYSTEM_state[5]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 169
+    Warning (13410): Pin "BB_SYSTEM_point_1" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 179
+    Warning (13410): Pin "BB_SYSTEM_back_1" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 180
+    Warning (13410): Pin "BB_SYSTEM_COMP_anidado[1]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 175
+    Warning (13410): Pin "BB_SYSTEM_COMP_anidado[2]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 175
+    Warning (13410): Pin "BB_SYSTEM_COMP_anidado[3]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 175
+    Warning (13410): Pin "BB_SYSTEM_COMP_anidado[4]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 175
+    Warning (13410): Pin "BB_SYSTEM_COMP_anidado[5]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 175
+    Warning (13410): Pin "BB_SYSTEM_COMP_anidado[6]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 175
+    Warning (13410): Pin "BB_SYSTEM_COMP_anidado[7]" is stuck at GND File: C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v Line: 175
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 13 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 923 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 69 output pins
+    Info (21061): Implemented 847 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 145 warnings
+    Info: Peak virtual memory: 4769 megabytes
+    Info: Processing ended: Tue May 10 20:59:23 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:27
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.map.smsg.
+
+

@@ -1,0 +1,422 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim
+vBB_SYSTEM
+Z1 !s110 1652234390
+!i10b 1
+!s100 fh_FW8GW>8GB^QV8Nj9eV2
+I9X?4;5cBdj;c_jDCc?7L^1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1652234346
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v
+Z3 L0 21
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1652234390.000000
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD
+Z7 tCvgOpt 0
+n@b@b_@s@y@s@t@e@m
+vCC_BIN2BCD1
+Z8 !s110 1652234389
+!i10b 1
+!s100 QO[[GfEG:_IIZUgJ1o]@b1
+IXj=ae`Jom[Rjj5EblX;`c2
+R2
+R0
+w1531849172
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v
+Z9 L0 19
+R4
+r1
+!s85 0
+31
+Z10 !s108 1652234389.000000
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BIN2BCD1.v|
+!i113 1
+R6
+Z11 !s92 -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl
+R7
+n@c@c_@b@i@n2@b@c@d1
+vCC_BOTTOMSIDECOMPARATOR
+R8
+!i10b 1
+!s100 MjU1Yn;iTX94@TFOlJ7]X3
+INdWUY<^J8l1n202?=m5CN2
+R2
+R0
+w1572359949
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BOTTOMSIDECOMPARATOR.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BOTTOMSIDECOMPARATOR.v
+R3
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BOTTOMSIDECOMPARATOR.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_BOTTOMSIDECOMPARATOR.v|
+!i113 1
+R6
+R11
+R7
+n@c@c_@b@o@t@t@o@m@s@i@d@e@c@o@m@p@a@r@a@t@o@r
+vCC_MUX
+R1
+!i10b 1
+!s100 <<Nbg?^=SLbE8C[XdU=Z93
+IM6SUi6BGhSkIQOASbeW2S1
+R2
+R0
+w1652219813
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_MUX.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_MUX.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_MUX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_MUX.v|
+!i113 1
+R6
+R11
+R7
+n@c@c_@m@u@x
+vCC_REGISTERCOMPARATOR
+R1
+!i10b 1
+!s100 BEU8`gheO5RoWRd3IDA@R1
+I6_N=PRVO3]Z>j]1J0PNnf3
+R2
+R0
+w1652228421
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v|
+!i113 1
+R6
+R11
+R7
+n@c@c_@r@e@g@i@s@t@e@r@c@o@m@p@a@r@a@t@o@r
+vCC_SEVENSEG1
+R8
+!i10b 1
+!s100 G<UhDC>dg@][__^<KYD[D2
+I]U7V?C;:A7VkO_hjKEc>d3
+R2
+R0
+w1650393043
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SEVENSEG1.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SEVENSEG1.v
+L0 24
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SEVENSEG1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SEVENSEG1.v|
+!i113 1
+R6
+R11
+R7
+n@c@c_@s@e@v@e@n@s@e@g1
+vCC_SPEEDCOMPARATOR
+R8
+!i10b 1
+!s100 W^gP3c08lBJm;dWZ<?B^W0
+I_Ao<P;0Tbhgb_eALXU]3^1
+R2
+R0
+w1587551767
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SPEEDCOMPARATOR.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SPEEDCOMPARATOR.v
+R3
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SPEEDCOMPARATOR.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_SPEEDCOMPARATOR.v|
+!i113 1
+R6
+R11
+R7
+n@c@c_@s@p@e@e@d@c@o@m@p@a@r@a@t@o@r
+vmatrix_ctrl
+R8
+!i10b 1
+!s100 e8fJ::8FZhBf=Yo62HC<D0
+Ij3Q3WF;o4oa`I?UhmMWOS3
+R2
+R0
+w1554920989
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v
+L0 18
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/max7219_ctrl.v|
+!i113 1
+R6
+R11
+R7
+vSC_DEBOUNCE1
+R1
+!i10b 1
+!s100 R1A>6;z02mNBGFV[E4kge0
+IeJVBMULgTf3LO26afZMUX1
+R2
+R0
+w1550072613
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_DEBOUNCE1.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_DEBOUNCE1.v
+L0 44
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_DEBOUNCE1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_DEBOUNCE1.v|
+!i113 1
+R6
+R11
+R7
+n@s@c_@d@e@b@o@u@n@c@e1
+vSC_RegBACKGTYPE
+R8
+!i10b 1
+!s100 R]TJbfiB3f2dzbf_=]GF40
+IeOT<H=mFX@:]ZdnZJbbl53
+R2
+R0
+w1652226789
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegBACKGTYPE.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegBACKGTYPE.v
+R3
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegBACKGTYPE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegBACKGTYPE.v|
+!i113 1
+R6
+R11
+R7
+n@s@c_@reg@b@a@c@k@g@t@y@p@e
+vSC_RegPOINTTYPE
+R8
+!i10b 1
+!s100 o2g;f^Y]eUalNX2XO4YWD3
+IjZ_5<@AXOJT8ic6WOKXjh2
+R2
+R0
+w1651083495
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v
+R3
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_RegPOINTTYPE.v|
+!i113 1
+R6
+R11
+R7
+n@s@c_@reg@p@o@i@n@t@t@y@p@e
+vSC_STATEMACHINEBACKG
+R8
+!i10b 1
+!s100 eU<?KK8AT9kdeBU?Saf`@0
+IIeQ4An9l7nTj52f:nW1][1
+R2
+R0
+w1652231482
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEBACKG.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEBACKG.v
+R3
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEBACKG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEBACKG.v|
+!i113 1
+R6
+R11
+R7
+n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e@b@a@c@k@g
+vSC_STATEMACHINEGAME
+R1
+!i10b 1
+!s100 5kK5B7zDL7@fTBBE=kX:M2
+Ic]`WGL@;F_j7ohQ4H>=;F0
+R2
+R0
+w1652233431
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v|
+!i113 1
+R6
+R11
+R7
+n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e@g@a@m@e
+vSC_STATEMACHINEPOINT
+R8
+!i10b 1
+!s100 X[>PgJd<CY[2D08S0Bn=22
+IS3L>M>hRXIL9@0K9EROig3
+R2
+R0
+w1651184110
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v
+R3
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEPOINT.v|
+!i113 1
+R6
+R11
+R7
+n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e@p@o@i@n@t
+vSC_upCOUNTER
+R8
+!i10b 1
+!s100 PT49PD5be3bIA@;=]eGhk2
+Id<gLnP<LeKQ8l:<;P01o61
+R2
+R0
+w1587548580
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upCOUNTER.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upCOUNTER.v
+R3
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upCOUNTER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upCOUNTER.v|
+!i113 1
+R6
+R11
+R7
+n@s@c_up@c@o@u@n@t@e@r
+vSC_upSPEEDCOUNTER
+R8
+!i10b 1
+!s100 cm=PR6iaGzJLc2NkCh];P0
+IPUZnkM111^C6=Si5ZLdCa0
+R2
+R0
+w1554825616
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upSPEEDCOUNTER.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upSPEEDCOUNTER.v
+R3
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upSPEEDCOUNTER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_upSPEEDCOUNTER.v|
+!i113 1
+R6
+R11
+R7
+n@s@c_up@s@p@e@e@d@c@o@u@n@t@e@r
+vshift_reg_start_done
+R8
+!i10b 1
+!s100 P[k=OFn:ZJUAdXXFS>kmX1
+I9Nf]nX5;]3>cW8aS?1>XM0
+R2
+R0
+w1554920993
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/shift_reg_start_done.v
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/shift_reg_start_done.v
+L0 34
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/shift_reg_start_done.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/shift_reg_start_done.v|
+!i113 1
+R6
+R11
+R7
+vTB_SYSTEM
+R1
+!i10b 1
+!s100 PUXNc@0fYXSSeBLo><4B91
+IUg4UW3iN]S3;T4[D5MRg83
+R2
+R0
+w1652234254
+8C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim/TB_SYSTEM.vt
+FC:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim/TB_SYSTEM.vt
+R9
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim/TB_SYSTEM.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim|C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim/TB_SYSTEM.vt|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim
+R7
+n@t@b_@s@y@s@t@e@m

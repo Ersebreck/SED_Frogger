@@ -1,0 +1,235 @@
+//=======================================================
+//  MODULE Definition
+//=======================================================
+module SC_STATEMACHINEGAME (
+	//////////// OUTPUTS //////////
+	SC_STATEMACHINEGAME_clear_OutLow,
+	SC_STATEMACHINEGAME_load_OutLow,
+	SC_STATEMACHINEGAME_shiftselection_Out,
+	SC_STATEMACHINEGAME_upcount_out,
+	//////////// INPUTS //////////
+	SC_STATEMACHINEGAME_CLOCK_50,
+	SC_STATEMACHINEGAME_RESET_InHigh,
+	SC_STATEMACHINEGAME_startButton_InLow,
+	//////////// OURS //////////
+	SC_STATEMACHINEGAME_WinF_InLow,
+	SC_STATEMACHINEGAME_WinL_InLow,
+	SC_STATEMACHINEGAME_Lose_InLow,
+	SC_STATEMACHINEGAME_Level_InLow,
+	SC_STATEMACHINEGAME_Level_Out,
+	SC_STATEMACHINEGAME_RESET_FromGame,
+	STATE_Signal
+);	
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+// states declaration
+localparam STATE_RESET_0									= 0;
+localparam STATE_START_0									= 1;
+localparam STATE_CHECK_0									= 2;
+localparam STATE_INIT_0										= 3;
+localparam STATE_SHIFT_0									= 4;
+localparam STATE_COUNT_0									= 5;
+localparam STATE_CHECK_1									= 6;
+
+// Ours
+
+// States
+
+localparam STATE_WIN_0										= 7; // gano una rana
+localparam STATE_WIN_1										= 8; // gane el nivel
+localparam STATE_WIN_2										= 9; // gane el juego
+
+localparam STATE_LOSE_0										= 10; // perdí una vida
+localparam STATE_LOSE_1										= 11; // perdí el juego
+
+localparam STATE_START_1									=12; // inicio el nivel con la segunda rana
+
+localparam STATE_START_L1									=13; // inicio nivel 1
+localparam STATE_START_L2									=14; // inicio nivel 2
+localparam STATE_START_L3									=15; // inicio nivel 3
+localparam STATE_START_L4									=16; // inicio nivel 4
+
+
+
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+output reg		SC_STATEMACHINEGAME_clear_OutLow;
+output reg		SC_STATEMACHINEGAME_load_OutLow;
+output reg		[1:0] SC_STATEMACHINEGAME_shiftselection_Out;
+output reg 		SC_STATEMACHINEGAME_upcount_out;
+input				SC_STATEMACHINEGAME_CLOCK_50;
+input 			SC_STATEMACHINEGAME_RESET_InHigh;
+input				SC_STATEMACHINEGAME_startButton_InLow;
+
+// Ours
+
+output reg		SC_STATEMACHINEGAME_Level_Out;
+output reg		[1:0] SC_STATEMACHINEGAME_RESET_FromGame;
+
+input				SC_STATEMACHINEGAME_Level_InLow;
+
+input				SC_STATEMACHINEGAME_WinF_InLow;
+input				SC_STATEMACHINEGAME_WinL_InLow;
+input				SC_STATEMACHINEGAME_Lose_InLow;
+
+parameter frog_counter = 1;
+parameter level_counter = 1;
+
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+reg [5:0] STATE_Register;
+output reg [5:0] STATE_Signal;
+//=======================================================
+//  Structural coding
+//=======================================================
+//INPUT LOGIC: COMBINATIONAL
+// NEXT STATE LOGIC : COMBINATIONAL
+always @(*)
+begin
+	case (STATE_Register)
+		STATE_RESET_0: STATE_Signal = STATE_START_0;
+		STATE_START_0: STATE_Signal = STATE_CHECK_0;
+		STATE_CHECK_0: if (SC_STATEMACHINEGAME_startButton_InLow == 1'b0) STATE_Signal = STATE_INIT_0;
+						else STATE_Signal = STATE_COUNT_0;
+		STATE_INIT_0:	STATE_Signal = STATE_CHECK_1;
+		STATE_COUNT_0: 	STATE_Signal = STATE_CHECK_0;
+		
+		STATE_CHECK_1: if (SC_STATEMACHINEGAME_startButton_InLow == 1'b0) STATE_Signal = STATE_CHECK_1;
+						else STATE_Signal = STATE_CHECK_0;
+						
+		// Ours
+		
+		STATE_WIN_0: if (SC_STATEMACHINEGAME_WinF_InLow == 1'b1) STATE_Signal = STATE_START_1; // gano una rana
+		
+		STATE_WIN_1: if (SC_STATEMACHINEGAME_WinL_InLow == 1'b1) STATE_Signal = STATE_START_L1; // gane el nivel
+		
+		STATE_WIN_2: if (level_counter == 4) STATE_Signal = STATE_START_1; // gane el nivel
+		
+		STATE_START_1: STATE_Signal = STATE_CHECK_0;// inicio el nivel con la segunda rana
+		
+		STATE_LOSE_0: STATE_Signal = STATE_RESET_0;// perdí una vida
+		
+		STATE_LOSE_1: if (SC_STATEMACHINEGAME_startButton_InLow == 1'b0) STATE_Signal = STATE_LOSE_1;// perdí el juego	
+		
+		
+		default : 		STATE_Signal = STATE_CHECK_0;
+	endcase
+end
+// STATE REGISTER : SEQUENTIAL
+always @ ( posedge SC_STATEMACHINEGAME_CLOCK_50 , posedge SC_STATEMACHINEGAME_RESET_InHigh)
+begin
+	if (SC_STATEMACHINEGAME_RESET_InHigh == 1'b1)
+		STATE_Register <= STATE_RESET_0;
+		
+	else if (SC_STATEMACHINEGAME_Lose_InLow == 1'b1) // Si perdí
+		STATE_Register <= STATE_LOSE_0;
+	else
+		STATE_Register <= STATE_Signal;
+end
+//=======================================================
+//  Outputs
+//=======================================================
+// OUTPUT LOGIC : COMBINATIONAL
+always @ (*)
+begin
+	case (STATE_Register)
+//=========================================================
+// STATE_RESET
+//=========================================================
+	STATE_RESET_0 :	
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEGAME_upcount_out = 1'b1;
+		end
+//=========================================================
+// STATE_START
+//=========================================================
+	STATE_START_0 :	
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEGAME_upcount_out = 1'b1;
+		end
+//=========================================================
+// STATE_CHECK
+//=========================================================
+	STATE_CHECK_0 :
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEGAME_upcount_out = 1'b1;
+		end
+//=========================================================
+// STATE_CHECK
+//=========================================================
+	STATE_CHECK_1 :
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEGAME_upcount_out = 1'b1;
+		end
+//=========================================================
+// STATE_INIT
+//=========================================================
+	STATE_INIT_0 :	
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b0;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b11; 
+			SC_STATEMACHINEGAME_upcount_out = 1'b1;
+		end
+//=========================================================
+// STATE_SHIFT
+//=========================================================
+	STATE_SHIFT_0 :
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b10; 
+			SC_STATEMACHINEGAME_upcount_out = 1'b1;
+		end
+//=========================================================
+// STATE_COUNT_0
+//=========================================================
+	STATE_COUNT_0 :	
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b11;  
+			SC_STATEMACHINEGAME_upcount_out = 1'b0;
+		end
+//=========================================================
+// STATE_LOSE_0
+//=========================================================
+	STATE_LOSE_0 :	
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b11;  
+			SC_STATEMACHINEGAME_upcount_out = 1'b0;
+			SC_STATEMACHINEGAME_RESET_FromGame = 1'b1;
+		end		
+
+//=========================================================
+// DEFAULT
+//=========================================================
+	default :
+		begin
+			SC_STATEMACHINEGAME_clear_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_load_OutLow = 1'b1;
+			SC_STATEMACHINEGAME_shiftselection_Out  = 2'b11;  
+			SC_STATEMACHINEGAME_upcount_out = 1'b1;
+		end
+	endcase
+end
+endmodule

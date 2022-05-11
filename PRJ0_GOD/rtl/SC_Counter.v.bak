@@ -1,0 +1,67 @@
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
+module SC_Counter #(
+	//////////// OUTPUTS //////////
+	SC_RegBACKGTYPE_data_OutBUS,
+	//////////// INPUTS //////////
+	SC_RegBACKGTYPE_CLOCK_50,
+	SC_RegBACKGTYPE_RESET_InHigh,
+	SC_RegBACKGTYPE_clear_InLow, 
+	SC_RegBACKGTYPE_load_InLow, 
+	SC_RegBACKGTYPE_shiftselection_In,
+	SC_RegBACKGTYPE_data_InBUS
+);
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+output		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data_OutBUS;
+input		SC_RegBACKGTYPE_CLOCK_50;
+input		SC_RegBACKGTYPE_RESET_InHigh;
+input		SC_RegBACKGTYPE_clear_InLow;
+input		SC_RegBACKGTYPE_load_InLow;	
+input		[1:0] SC_RegBACKGTYPE_shiftselection_In;
+input		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data_InBUS;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+reg [RegBACKGTYPE_DATAWIDTH-1:0] RegBACKGTYPE_Register;
+reg [RegBACKGTYPE_DATAWIDTH-1:0] RegBACKGTYPE_Signal;
+//=======================================================
+//  Structural coding
+//=======================================================
+//INPUT LOGIC: COMBINATIONAL
+always @(*)
+begin
+	if (SC_RegBACKGTYPE_clear_InLow == 1'b0)
+		RegBACKGTYPE_Signal = DATA_FIXED_INITREGBACKG;
+	else if (SC_RegBACKGTYPE_load_InLow == 1'b0)
+		RegBACKGTYPE_Signal = SC_RegBACKGTYPE_data_InBUS+1;
+	else if (SC_RegBACKGTYPE_shiftselection_In == 2'b01)
+		RegBACKGTYPE_Signal = {RegBACKGTYPE_Register[RegBACKGTYPE_DATAWIDTH-2:0],RegBACKGTYPE_Register[RegBACKGTYPE_DATAWIDTH-1:0]};
+	else if (SC_RegBACKGTYPE_shiftselection_In== 2'b10)
+		RegBACKGTYPE_Signal = {RegBACKGTYPE_Register[0],RegBACKGTYPE_Register[RegBACKGTYPE_DATAWIDTH-1:1]};
+	else
+		RegBACKGTYPE_Signal = RegBACKGTYPE_Register;
+	end	
+//STATE REGISTER: SEQUENTIAL
+always @(posedge SC_RegBACKGTYPE_CLOCK_50, posedge SC_RegBACKGTYPE_RESET_InHigh)
+begin
+	if (SC_RegBACKGTYPE_RESET_InHigh == 1'b1)
+		RegBACKGTYPE_Register <= 0;
+	else
+		RegBACKGTYPE_Register <= RegBACKGTYPE_Signal;
+end
+//=======================================================
+//  Outputs
+//=======================================================
+//OUTPUT LOGIC: COMBINATIONAL
+assign SC_RegBACKGTYPE_data_OutBUS = RegBACKGTYPE_Register;
+
+endmodule

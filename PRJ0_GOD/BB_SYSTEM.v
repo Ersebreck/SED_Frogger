@@ -57,21 +57,21 @@ module BB_SYSTEM (
  parameter DISPLAY_DATAWIDTH = 12;
  
  parameter DATA_FIXED_INITREGPOINT_7 = 8'b00000000;
- parameter DATA_FIXED_INITREGPOINT_6 = 8'b00010000;
+ parameter DATA_FIXED_INITREGPOINT_6 = 8'b00000000;
  parameter DATA_FIXED_INITREGPOINT_5 = 8'b00000000;
  parameter DATA_FIXED_INITREGPOINT_4 = 8'b00000000;
  parameter DATA_FIXED_INITREGPOINT_3 = 8'b00000000;
  parameter DATA_FIXED_INITREGPOINT_2 = 8'b00000000;
  parameter DATA_FIXED_INITREGPOINT_1 = 8'b00000000;
- parameter DATA_FIXED_INITREGPOINT_0 = 8'b00000000;
+ parameter DATA_FIXED_INITREGPOINT_0 = 8'b00010000;
  
- parameter N1_7 = 8'b11110111;
+ parameter N1_7 = 8'b11010111;
  parameter N1_6 = 8'b00000000;
- parameter N1_5 = 8'b10010011;
+ parameter N1_5 = 8'b10010010;
  parameter N1_4 = 8'b00000000;
- parameter N1_3 = 8'b11100111;
+ parameter N1_3 = 8'b10000111;
  parameter N1_2 = 8'b00000000;
- parameter N1_1 = 8'b11110001;
+ parameter N1_1 = 8'b11100001;
  parameter N1_0 = 8'b00000000;
  
  parameter N2_7 = 8'b11101111;
@@ -85,20 +85,20 @@ module BB_SYSTEM (
  
  parameter N3_7 = 8'b11110111;
  parameter N3_6 = 8'b00000000;
- parameter N3_5 = 8'b11100111;
+ parameter N3_5 = 8'b11000111;
  parameter N3_4 = 8'b00000000;
- parameter N3_3 = 8'b11100111;
+ parameter N3_3 = 8'b00100111;
  parameter N3_2 = 8'b00000000;
- parameter N3_1 = 8'b11100111;
+ parameter N3_1 = 8'b01100110;
  parameter N3_0 = 8'b00000000;
  
  parameter N4_7 = 8'b11101111;
  parameter N4_6 = 8'b00000000;
- parameter N4_5 = 8'b11100111;
+ parameter N4_5 = 8'b00100111;
  parameter N4_4 = 8'b00000000;
  parameter N4_3 = 8'b11100111;
  parameter N4_2 = 8'b00000000;
- parameter N4_1 = 8'b11100111;
+ parameter N4_1 = 8'b10100100;
  parameter N4_0 = 8'b00000000;
  
  parameter CN1_7 = 8'b00000000;

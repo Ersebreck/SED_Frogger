@@ -102,7 +102,7 @@ begin
 		
 	// se reinicio luego de anidar
 	
-	else if ((|CC_POINTREG_6)) // AQUI VA 0, 6 POR SIMULACION
+	else if ((|CC_POINTREG_0)) // AQUI VA 0, 6 POR SIMULACION
 		CC_REGISTERCOMPARATOR_NN_Outlow = 1'b0; 
 	
 	// gane nivel

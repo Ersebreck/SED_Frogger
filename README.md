@@ -1,5 +1,7 @@
 # SED_Frogger
 
+![image text](1200px-Frogger-logo.svg.png)
+
 Código en verilog para la implementación de frogger en una FPGA
 
 

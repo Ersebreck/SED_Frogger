@@ -20,8 +20,8 @@ vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitale
 vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl {C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_DEBOUNCE1.v}
 vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD {C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/BB_SYSTEM.v}
 vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl {C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/SC_STATEMACHINEGAME.v}
-vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl {C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_MUX.v}
 vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl {C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_REGISTERCOMPARATOR.v}
+vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl {C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/rtl/CC_MUX.v}
 
 vlog -vlog01compat -work work +incdir+C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim {C:/Users/user/Documents/U/2022-01/digitales/PRJ0_GOD/simulation/modelsim/TB_SYSTEM.vt}
 

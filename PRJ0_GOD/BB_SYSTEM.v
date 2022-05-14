@@ -74,7 +74,7 @@ module BB_SYSTEM (
  parameter N1_1 = 8'b11100001;
  parameter N1_0 = 8'b00000000;
  
- parameter N2_7 = 8'b11101111;
+ parameter N2_7 = 8'b11100111;
  parameter N2_6 = 8'b00000000;
  parameter N2_5 = 8'b11100011;
  parameter N2_4 = 8'b00000000;
@@ -83,7 +83,7 @@ module BB_SYSTEM (
  parameter N2_1 = 8'b10001010;
  parameter N2_0 = 8'b00000000;
  
- parameter N3_7 = 8'b11110111;
+ parameter N3_7 = 8'b10110111;
  parameter N3_6 = 8'b00000000;
  parameter N3_5 = 8'b11000111;
  parameter N3_4 = 8'b00000000;
@@ -92,7 +92,7 @@ module BB_SYSTEM (
  parameter N3_1 = 8'b01100110;
  parameter N3_0 = 8'b00000000;
  
- parameter N4_7 = 8'b11101111;
+ parameter N4_7 = 8'b11101110;
  parameter N4_6 = 8'b00000000;
  parameter N4_5 = 8'b00100111;
  parameter N4_4 = 8'b00000000;
@@ -285,6 +285,7 @@ wire [7:0] mux_7;
 wire [1:0] change_backg;
 
 wire [5:0] estado;
+wire [1:0] power_up;
 
 
 //=======================================================
@@ -513,9 +514,10 @@ SC_RegBACKGTYPE #(.RegBACKGTYPE_DATAWIDTH(DATAWIDTH_BUS), .DATA_FIXED_INITREGBAC
 	.SC_RegBACKGTYPE_CLOCK_50(BB_SYSTEM_CLOCK_50),
 	.SC_RegBACKGTYPE_RESET_InHigh(BB_SYSTEM_RESET_InHigh),
 	.SC_RegBACKGTYPE_clear_InLow(STATEMACHINEBACKG_clear_cwire),	
-	.SC_RegBACKGTYPE_load_InLow(STATEMACHINEBACKG_load_cwire),
+//	.SC_RegBACKGTYPE_load_InLow(STATEMACHINEBACKG_load_cwire),
 	.SC_RegBACKGTYPE_shiftselection_In(STATEMACHINEBACKG_shiftselection_cwire),
-	.SC_RegBACKGTYPE_data_InBUS(mux_2)
+	.SC_RegBACKGTYPE_data_InBUS(mux_2),
+	.SC_RegBACKGTYPE_Powerup(power_up)
 );
 SC_RegBACKGTYPE #(.RegBACKGTYPE_DATAWIDTH(DATAWIDTH_BUS), .DATA_FIXED_INITREGBACKG()) SC_RegBACKGTYPE_u1 (
 // port map - connection between master ports and signals/registers   
@@ -577,6 +579,7 @@ CC_REGISTERCOMPARATOR CC_REGISTERCOMPARATOR_1 (
 	.CC_REGISTERCOMPARATOR_WinL_OutLow(COMP_WIN_LEVEL),	
 	.CC_REGISTERCOMPARATOR_Lose_OutLow(COMP_LOSE),
 	.CC_REGISTERCOMPARATOR_NN_Outlow(COMP_anidado),
+	.CC_REGISTERCOMPARATOR_POWERUP(power_up),
 
 	.CC_BACKREG_0(RegBACKGTYPE_2_BACKGMATRIX_data0_Out),
 	.CC_BACKREG_1(RegBACKGTYPE_2_BACKGMATRIX_data1_Out),

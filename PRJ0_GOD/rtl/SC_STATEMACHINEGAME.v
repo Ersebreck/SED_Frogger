@@ -52,7 +52,10 @@ localparam STATE_LOAD_0									= 20;
 localparam STATE_LOAD_1									= 21;
 localparam STATE_LOAD_2									= 22;
 localparam STATE_LOAD_3									= 23;
-localparam STATE_LOAD_WIN									= 24;
+localparam STATE_LOAD_WIN								= 24;
+
+localparam STATE_INIT 									= 25;
+
 
 
 
@@ -145,10 +148,13 @@ begin
 		STATE_CHECK_3: if (SC_STATEMACHINEGAME_Lose_InLow == 1'b1) STATE_Signal = STATE_LOSE_3; //PERDI
 						else  if (SC_STATEMACHINEGAME_WinF_InLow == 1'b0) STATE_Signal = STATE_WIN_03; //ANIDE
 						else if (SC_STATEMACHINEGAME_WinL_InLow == 1'b1) STATE_Signal = STATE_LOAD_WIN; //GANE NIVEL
-						else STATE_Signal = STATE_CHECK_3;		
+						else STATE_Signal = STATE_CHECK_3;
+				
+		STATE_INIT: if (SC_STATEMACHINEGAME_startButton_InLow == 1'b0) STATE_Signal = STATE_LOAD_0;
+						else STATE_Signal = STATE_INIT;
 						
 		
-		default : 		STATE_Signal = STATE_LOAD_0;
+		default : 		STATE_Signal = STATE_INIT;
 	endcase
 end
 // STATE REGISTER : SEQUENTIAL
@@ -371,6 +377,14 @@ begin
 			SC_STATEMACHINEGAME_RESET_FromGame_Point = 1'b0;
 			SC_STATEMACHINEGAME_Change_BACKG = 1'b1;
 		end
+		
+		STATE_INIT :	
+		begin
+			SC_STATEMACHINEGAME_Level_Out = 4'b0100;//4
+			SC_STATEMACHINEGAME_SET_FrogGame = 1'b0;
+			SC_STATEMACHINEGAME_RESET_FromGame_Point = 1'b0;
+			SC_STATEMACHINEGAME_Change_BACKG = 1'b1;
+		end
 
 //=========================================================
 // DEFAULT
@@ -378,9 +392,9 @@ begin
 	default :
 		begin
 		SC_STATEMACHINEGAME_SET_FrogGame = 1'b0;
-		SC_STATEMACHINEGAME_Level_Out = 4'b0000;
+		SC_STATEMACHINEGAME_Level_Out = 4'b0100;
 		SC_STATEMACHINEGAME_RESET_FromGame_Point = 1'b0;
-		SC_STATEMACHINEGAME_Change_BACKG = 1'b0;
+		SC_STATEMACHINEGAME_Change_BACKG = 1'b1;
 		end
 	endcase
 end

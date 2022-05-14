@@ -32,7 +32,8 @@ module SC_RegBACKGTYPE #(parameter RegBACKGTYPE_DATAWIDTH=8, parameter DATA_FIXE
 	// OURS
 	
 	SC_RegBACKGTYPE_NN, // vector
-	SC_RegBACKGTYPE_SET_NN // señal
+	SC_RegBACKGTYPE_SET_NN, // señal
+	SC_RegBACKGTYPE_Powerup //señal 
 );
 //=======================================================
 //  PARAMETER declarations
@@ -48,6 +49,7 @@ input		SC_RegBACKGTYPE_clear_InLow;
 input		SC_RegBACKGTYPE_load_InLow;	
 input		[1:0] SC_RegBACKGTYPE_shiftselection_In;
 input		[RegBACKGTYPE_DATAWIDTH-1:0]	SC_RegBACKGTYPE_data_InBUS;
+input    [1:0] SC_RegBACKGTYPE_Powerup;
 
 // OURS
 
@@ -85,6 +87,8 @@ always @(posedge SC_RegBACKGTYPE_CLOCK_50, posedge SC_RegBACKGTYPE_RESET_InHigh)
 begin
 	if (SC_RegBACKGTYPE_RESET_InHigh == 1'b1)
 		RegBACKGTYPE_Register <= 0;
+	else if (SC_RegBACKGTYPE_Powerup == 1'b1)
+		RegBACKGTYPE_Register = DATA_FIXED_INITREGBACKG;
 	else
 		RegBACKGTYPE_Register <= RegBACKGTYPE_Signal;
 end
